@@ -1,12 +1,12 @@
-
+import img from '../../../../public/Benar.jpg'
 
 const Benar = () => {
     return (
         <div>
             <div
-  className="hero min-h-screen"
+  className="hero lg:min-h-[700px]"
   style={{
-    backgroundImage: "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
+    backgroundImage: `url(${img})`,
   }}>
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-neutral-content text-center">
