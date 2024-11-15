@@ -1,14 +1,17 @@
 import { Outlet } from "react-router-dom";
-import Nav from "../Componet/ShearyPass/Nav/Nav";
-import Futoor from "../Componet/ShearyPass/Futoor/Futoor";
+import Navbar from "../Componet/Pajes/ShearPages/Navbar";
+
+
+
 
 
 const Main = () => {
     return (
         <div>
-            <Nav></Nav>
+        <Navbar></Navbar>
+        
          <Outlet />
-         <Futoor></Futoor>
+      
         </div>
     );
 };

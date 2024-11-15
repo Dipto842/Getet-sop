@@ -11,6 +11,7 @@ import { auth } from "./Firebase";
 
 export const Authcontes = createContext(null);
 
+// eslint-disable-next-line react/prop-types
 const Authprovedar = ({ children }) => {
   const provider = new GoogleAuthProvider();
   const [user, setuser] = useState("");
