@@ -1,7 +1,19 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { Authcontes } from "../../../firebase/Authentication";
+import auth from "../../../firebase/Firebase";
+import { signOut } from "firebase/auth";
+import { FaRegUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
+  const {user}=useContext(Authcontes)
+  const logout = ()=>{
+    signOut(auth)
+    .then((res)=>{
+      console.log(res);
+      
+    })
+  }
 const naveLing =<div className="flex  gap-6 items-center text-[17px] font-medium italic ">
 <Link to={'/'}><li className=" text-white border-2 w-20 text-center rounded-xl h-10 pt-[6px]   hover:bg-green-800   active:bg-green-700   focus:outline-none focus:ring focus:ring-green-300     shadow-lg shadow-purple-500/50 ">Home</li></Link>
 
@@ -43,23 +55,24 @@ const naveLing =<div className="flex  gap-6 items-center text-[17px] font-medium
   </div>
  
   <div className="navbar-end ">
-    <div className="pr-28 ">
-      <Link  ><li  className= " list-none text-white border-2 w-20 text-center rounded-xl h-10 pt-[6px]   hover:bg-green-300   active:bg-green-700   focus:outline-none focus:ring focus:ring-green-300     shadow-md " >Sign in</li> </Link>
+   { !user &&  <div className="pr-28 ">
+      <Link to={'/login'} ><li  className= " list-none text-white border-2 w-20 text-center rounded-xl h-10 pt-[6px]   hover:bg-green-300   active:bg-green-700   focus:outline-none focus:ring focus:ring-green-300     shadow-md " >Sign in</li> </Link>
       
     </div>
+   }
   <div className="dropdown dropdown-end pr-6">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
           <img
-            alt="Tailwind CSS Navbar component"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+            alt='No picar'
+            src= {  user.photoURL} />
         </div>
       </div>
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3  p-2 shadow bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 gap-4 text-center ">
     <Link>   <li className="text-white border-2 w-20 text-center rounded-xl h-10 pt-[6px]    hover:bg-green-300   active:bg-green-700   focus:outline-none focus:ring focus:ring-green-300  mx-7   shadow-md ">Deshboard</li></Link>
-      <Link> <li className="text-white border-2 w-20 text-center rounded-xl h-10 pt-[6px]   hover:bg-green-300   active:bg-green-700   focus:outline-none focus:ring focus:ring-green-300   mx-7   shadow-md ">Logout </li></Link>
+      <Link> <li  onClick={logout} className="text-white border-2 w-20 text-center rounded-xl h-10 pt-[6px]   hover:bg-green-300   active:bg-green-700   focus:outline-none focus:ring focus:ring-green-300   mx-7   shadow-md ">Logout </li></Link>
           
       </ul>
     </div>

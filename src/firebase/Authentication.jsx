@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import {
+ 
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -7,12 +8,15 @@ import {
 } from "firebase/auth";
 
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "./Firebase";
+import auth from "./Firebase";
 
-export const Authcontes = createContext(null);
+
+
+ export let Authcontes = createContext('')
 
 // eslint-disable-next-line react/prop-types
 const Authprovedar = ({ children }) => {
+  
   const provider = new GoogleAuthProvider();
   const [user, setuser] = useState("");
 
@@ -25,13 +29,14 @@ const Authprovedar = ({ children }) => {
   // rejestar
 
   const singup = (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password)
+
   };
 
   // logen
 
   const singIn = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
+    return signInWithEmailAndPassword(auth, email, password)
   };
 
   useEffect(() => {
