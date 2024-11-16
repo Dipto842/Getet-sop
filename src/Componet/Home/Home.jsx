@@ -1,3 +1,4 @@
+import Accordion from "../Pajes/HomePages/accordion/Accordion";
 import Benar from "../Pajes/HomePages/Benar";
 import Products from "../Pajes/HomePages/Products/Products";
 import Reviwes from "../Pajes/HomePages/UserRevus/Reviwes";
@@ -15,6 +16,10 @@ const Home = () => {
 <div>
 <h3 className="text-2xl text-center font-bold mt-9 mb-6"> User review</h3>
   <Reviwes></Reviwes>
+</div>
+<div>
+<h3 className="text-2xl text-center font-bold mt-9 mb-6"> User  Accordion </h3>
+  <Accordion></Accordion>
 </div>
           </div>
         </div>
