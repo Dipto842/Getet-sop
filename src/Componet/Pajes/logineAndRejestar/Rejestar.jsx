@@ -19,11 +19,11 @@ const Rejestar = () => {
         const password = data.password
         console.log(singup);
         singup(email,password)
-        .then((res)=>{
+        .then(()=>{
             Swal.fire({
                 position: "top-end",
                 icon: "success",
-                title: "Your work has been saved",
+                title: "Your success Rejestar",
                 showConfirmButton: false,
                 timer: 1500
               });
