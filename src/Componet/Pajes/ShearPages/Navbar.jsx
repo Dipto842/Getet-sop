@@ -65,7 +65,7 @@ const naveLing =<div className="flex  gap-6 items-center text-[17px] font-medium
         <div className="w-10 rounded-full">
           <img
             alt='No picar'
-            src= {  user.photoURL} />
+            src= {  user?.photoURL} />
         </div>
       </div>
       <ul
