@@ -71,7 +71,7 @@ const naveLing =<div className="flex  gap-6 items-center text-[17px] font-medium
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3  p-2 shadow bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 gap-4 text-center ">
-    <Link>   <li className="text-white border-2 w-20 text-center rounded-xl h-10 pt-[6px]    hover:bg-green-300   active:bg-green-700   focus:outline-none focus:ring focus:ring-green-300  mx-7   shadow-md ">Deshboard</li></Link>
+    <Link to={'/desbord'}>   <li className="text-white border-2 w-20 text-center rounded-xl h-10 pt-[6px]    hover:bg-green-300   active:bg-green-700   focus:outline-none focus:ring focus:ring-green-300  mx-7   shadow-md ">Deshboard</li></Link>
       <Link> <li  onClick={logout} className="text-white border-2 w-20 text-center rounded-xl h-10 pt-[6px]   hover:bg-green-300   active:bg-green-700   focus:outline-none focus:ring focus:ring-green-300   mx-7   shadow-md ">Logout </li></Link>
           
       </ul>
